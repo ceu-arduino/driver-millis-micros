@@ -1,0 +1,17 @@
+#ifndef MILLIS_MICROS_PM
+#error "Missing `#define MILLIS_MICROS_PM`.
+#endif
+
+var u8 millis_micros_count = 0;
+
+code/await Millis_Micros (none) -> NEVER do
+    {ceu_pm_set(MILLIS_MICROS_PM, 1);}
+    outer.millis_micros_count = outer.millis_micros_count + 1;
+    do finalize with
+        outer.millis_micros_count = outer.millis_micros_count - 1;
+        if outer.millis_micros_count == 0 then
+            {ceu_pm_set(MILLIS_MICROS_PM, 0);}
+        end
+    end
+    await FOREVER;
+end
