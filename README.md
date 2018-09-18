@@ -20,7 +20,9 @@ Gets the number of elapsed milliseconds since the board reset.
 output &u32 TIME_GET_MILLIS;
 ```
 
-1. `&u32`: reference to write the value
+Parameters:
+
+- `&u32`: reference to write the value
 
 #### TIME_GET_MICROS
 
@@ -32,7 +34,7 @@ output &u32 TIME_GET_MICROS;
 
 Parameters:
 
-1. `&u32`: reference to write the value
+- `&u32`: reference to write the value
 
 ### TIME_DELAY_MILLIS
 
@@ -44,7 +46,7 @@ output u32 TIME_DELAY_MILLIS;
 
 Parameters:
 
-1. `u32`: number of milliseconds
+- `u32`: number of milliseconds
 
 ### TIME_DELAY_MICROS
 
@@ -56,7 +58,7 @@ output u32 TIME_DELAY_MICROS;
 
 Parameters:
 
-1. `u32`: number of microseconds
+- `u32`: number of microseconds
 
 ### Code Abstractions
 
