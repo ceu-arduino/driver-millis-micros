@@ -10,6 +10,14 @@ output (&u32 us) TIME_GET_MICROS do
     us = _micros();
 end
 
+output (u32 ms) TIME_DELAY_MILLIS do
+    _delay(ms);
+end
+
+output (u32 us) TIME_DELAY_MICROS do
+    _delayMicroseconds(us);
+end
+
 code/await Time (none) -> NEVER do
     {ceu_pm_set(TIME_PM, 1);}
     do finalize with

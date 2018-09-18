@@ -9,14 +9,15 @@ var u32 us = _;
 { Serial.begin(9600); }
 
 loop do
+    await INT0;
     emit TIME_GET_MILLIS(&ms);
     emit TIME_GET_MICROS(&us);
-    await INT0;
     {
         Serial.print("MS ");
         Serial.println(@ms);
         Serial.print("US ");
         Serial.println(@us);
-        _DELAY(50);
     }
+    emit TIME_DELAY_MICROS(30000);
+    emit TIME_DELAY_MICROS(30000);
 end
