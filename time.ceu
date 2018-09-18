@@ -1,0 +1,19 @@
+#ifndef TIME_PM
+#error "Missing `#define TIME_PM`.
+#endif
+
+output (&u32 ms) TIME_GET_MILLIS do
+    ms = _millis();
+end
+
+output (&u32 us) TIME_GET_MICROS do
+    us = _micros();
+end
+
+code/await Time (none) -> NEVER do
+    {ceu_pm_set(TIME_PM, 1);}
+    do finalize with
+        {ceu_pm_set(TIME_PM, 0);}
+    end
+    await FOREVER;
+end

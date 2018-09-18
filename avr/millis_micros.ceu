@@ -1,2 +1,0 @@
-#define MILLIS_MICROS_PM CEU_PM_TIMER0
-#include "../millis_micros.ceu"

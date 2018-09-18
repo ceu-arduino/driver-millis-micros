@@ -1,0 +1,2 @@
+#define TIME_PM CEU_PM_TIMER0
+#include "../time.ceu"
