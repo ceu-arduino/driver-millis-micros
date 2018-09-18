@@ -1,0 +1,22 @@
+// compile with CEU_DEFS=-DCEU_PM_MIN
+
+#include "int0.ceu"
+#include "time.ceu"
+
+var u32 ms = _;
+var u32 us = _;
+
+{ Serial.begin(9600); }
+
+loop do
+    emit TIME_GET_MILLIS(&ms);
+    emit TIME_GET_MICROS(&us);
+    await INT0;
+    {
+        Serial.print("MS ");
+        Serial.println(@ms);
+        Serial.print("US ");
+        Serial.println(@us);
+        _DELAY(50);
+    }
+end
