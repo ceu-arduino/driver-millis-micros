@@ -46,6 +46,8 @@ code/await Time (none) -> NEVER;
 
 Parameters:
 
+- `none`
+
 Return:
 
 - `NEVER`: never returns
